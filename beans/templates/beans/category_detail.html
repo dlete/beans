@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+        <div class="col-md-8">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Edit</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+
+			<tbody>
+
+                <tr>
+                  <td>{{ category.name }}</td>
+                  <td><a href="{% url 'beans:category_edit' pk=category.id %}">Edit</a></td>
+                  <td><a href="{% url 'beans:category_delete' pk=category.id %}">Delete</a></td>
+                </tr>
+
+			</tbody>
+		  </table>
+
+          <p><a href="{% url 'beans:category_list' %}">Category list</a></p>
+		</div>
+
+{% endblock content %}

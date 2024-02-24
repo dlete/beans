@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load humanize %}
+
+{% block content %}
+
+        <div class="col-md-8">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>User</th>
+                <th>Category</th>
+                <th>Amount</th>
+                <th>Edit</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+
+			<tbody>
+
+                <tr>
+                  <td>{{ budget.user }}</td>
+                  <td>{{ budget.category }}</td>
+                  <td>{{ budget.amount|intcomma }}</td>
+                  <td><a href="{% url 'beans:budget_edit' pk=budget.id %}">Edit</a></td>
+                  <td><a href="{% url 'beans:budget_delete' pk=budget.id %}">Delete</a></td>
+                </tr>
+
+			</tbody>
+		  </table>
+
+          <p><a href="{% url 'beans:budget_list' %}">Budget list</a></p>
+		</div>
+
+{% endblock content %}

@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load humanize %}
+
+{% block content %}
+
+<!--
+<div id = "slider-2"></div>
+-->
+
+<!-- Begin, Slider Bound to Select -->
+<form id="reservation">
+  <label for="minbeds">Year</label>
+  <select name="minbeds" id="minbeds">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+    <option>6</option>
+  </select>
+</form>
+<!-- End, Slider Bound to Select -->
+
+
+<div class="row">
+<form action="/beans/report_year" method="post">
+    {% csrf_token %}
+    <label for="report_date">Please enter the date for which you want the report: </label>
+    <input id="report_date" type="date" name="report_date" value="{{ report_date }}">
+    <input type="submit" value="OK">
+
+    <!--
+    {{ report_date|date:"d M Y" }}
+    -->
+</form>
+</div>
+
+<div class="row">
+<h3>Report for the year {{ report_date|date:"Y" }}</h3>
+</div>
+
+        <div class="col-md-8">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Expenditure</th>
+                <th>Budget</th>
+                <th>Balance</th>
+              </tr>
+            </thead>
+
+			<tbody>
+{% for key, value in expense_vs_budget.items %}
+    <tr>
+	  <td>
+    {{ key }}
+	  </td>
+
+    {% for k in value %}
+      {% if k >= 0 %}
+        <td>
+          {{ k|intcomma }}
+        </td>
+      {% endif %}
+      {% if k < 0 %}
+        <td class="text-danger">
+          <b>{{ k|intcomma }}</b>
+        </td>
+      {% endif %}
+    {% endfor %}
+
+    </tr>
+{% endfor %}
+
+            </tbody>
+          </table>
+        </div><!-- "col-md-8" -->
+
+{% endblock %}

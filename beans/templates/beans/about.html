@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <h1>About</h1>
+    
+    <table class="table">
+    <tbody>
+    <tr>
+
+      <td>
+    <dl>
+      <dt>{{ paragraph1 }}</dt>
+        <dd>Create Categories</dd>
+      <dt>{{ paragraph2 }}</dt>
+        <dd>Create Budgets</dd>
+      <dt>{{ paragraph3 }}</dt>
+        <dd>Create Rules</dd>
+      <dt>{{ paragraph4 }}</dt>
+        <dd>Enter Transactions</dd>
+      <dt>{{ paragraph5 }}</dt>
+        <dd>Track Expenditure vs. Budget with the Monthly and Yearly Reports</dd>
+    </dl>
+      </td>
+
+      <td>
+    {% if user.is_authenticated %}
+    <form action="{% url 'beans:set_user_initial_data' %}" method="get">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-primary" name="set_user_initial_data">Set me up!</button>
+      <p>Press here if you want me to fill for you some sample Categories, Budgets, Rules and Transactions.</p>
+    </form>
+    {% endif %}
+      </td>
+
+    </tr>
+    </tbody>
+    </table>
+
+
+    {% if user.is_authenticated %}
+      <!-- if there is an an authenticated user, do not show anything here -->
+    {% else %}
+
+    <h1>Login with</h1>
+
+    <table class="table">
+      <tbody>
+        <tr>
+          <td>
+            <object data="{% static 'images/github_fluidicon.png'%}" type="image/png" height="48">Github icon</      object>
+          </td>
+          <td>
+            <a href="/accounts/github/login">Github</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <object data="{% static 'images/Google_"G"_Logo.svg'%}" type="image/png" height="48">Google icon</object>
+          </td>
+          <td>
+            <a href="/accounts/google/login">Google</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    {% endif %}
+
+{% endblock %}

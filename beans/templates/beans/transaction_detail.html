@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load humanize %}
+
+{% block content %}
+
+{% comment %}
+http://stackoverflow.com/questions/17032174/having-trouble-with-user-is-authenticated-in-django-template
+{% endcomment %}
+
+{% comment %}
+{% if user.is_authenticated %}
+    {{ request.user.username }}
+{% endif %}
+{% endcomment %}
+
+{% comment %}
+{% for t in transactions %}
+    <ul>{{ t.date }}, {{ t.description }}, {{ t.amount}}, {{ t.category }}, {{ t.user }}</ul>
+{% endfor %}
+{% endcomment %}
+
+
+        <div class="col-md-8">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Description</th>
+                <th>Amount</th>
+                <th>Category</th>
+                <th>Edit</th>
+                <th>Delete</th>
+                <th>Auto Classify</th>
+              </tr>
+            </thead>
+
+			<tbody>
+
+                <tr>
+				  <td>{{ transaction.date }}</td>
+                  <td>{{ transaction.description }}</td>
+                  <td>{{ transaction.amount|intcomma }}</td>
+                  <td>{{ transaction.category }}</td>
+                  <td><a href="{% url 'beans:transaction_edit' pk=transaction.id %}">Edit</a></td>
+                  <td><a href="{% url 'beans:transaction_delete' pk=transaction.id %}">Delete</a></td>
+                  <td><a href="{% url 'beans:transaction_auto_classify' pk=transaction.id %}">Auto Classify</a></td>
+                </tr>
+
+			</tbody>
+		  </table>
+
+          <p><a href="{% url 'beans:transaction_list' %}">Transaction list</a></p>
+		</div>
+
+{% endblock content %}

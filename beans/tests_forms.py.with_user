@@ -1,0 +1,69 @@
+from django.test import TestCase
+#from django.contrib.auth.models import *
+
+from beans.models import Budget, Category
+from beans.forms import BudgetForm
+
+
+class Budget_Form_Test(TestCase):
+    def setUp(self):
+        #username = 'testuser'
+        #password = 'testpass'
+        #user = User.objects.create_user(username=username, password=password)
+        category_name = 'testcategory'
+        category = Category.objects.create(name=category_name)
+
+    # Valid Form
+    def test_BudgetForm_valid(self):
+        # Form unit test with Foreign Key
+        # http://stackoverflow.com/questions/34317847/django-forms-unit-tests-with-foreignkey
+        data = {
+            'amount': 33,
+            #'category': Category.objects.get(id=1).pk,
+            #'user': User.objects.get(id=1).pk
+            'category': Category.objects.get(id=1).pk
+        }
+        form = BudgetForm(data)
+        self.assertTrue(form.is_valid())
+
+    # Invalid Amount type
+    def test_BudgetForm_invalid(self): 
+        data = {
+            'amount': "thirtythree",
+            #'category': Category.objects.get(id=1).pk,
+            #'user': User.objects.get(id=1).pk
+            'category': Category.objects.get(id=1).pk
+        }
+        form = BudgetForm(data)
+        self.assertFalse(form.is_valid())
+
+    # Invalid Category
+    # PENDING
+
+    # Invalid User
+    # Does not apply, the form BudgetForm does not have a User field
+
+    # Empty Amount
+    def test_BudgetForm_empty_amount(self):
+        data = {
+            'amount': '',
+            #'category': Category.objects.get(id=1).pk,
+            #'user': User.objects.get(id=1).pk
+            'category': Category.objects.get(id=1).pk
+        }
+        form = BudgetForm(data)
+        self.assertFalse(form.is_valid())
+
+    # Empty Category
+    def test_BudgetForm_empty_category(self):
+        data = {
+            'amount': 33,
+            #'category': '',
+            #'user': User.objects.get(id=1).pk
+            'category': ''
+        }
+        form = BudgetForm(data)
+        self.assertFalse(form.is_valid())
+
+    # Empty User 
+    # Does not apply, the form BudgetForm does not have a User field

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <h1>Update Many</h1>
+
+    {{ transaction_ids_to_edit }}
+    
+    date
+    {{ date }}
+    
+    description
+    {{ description }}
+    
+    amount
+    {{ amount }}
+
+    category
+    {{ category }}
+
+    <dl>
+      <dt>{{ paragraph1 }}</dt>
+        <dd>Create Budgets</dd>
+      <dt>{{ paragraph2 }}</dt>
+        <dd>Enter Transactions</dd>
+      <dt>{{ paragraph3 }}</dt>
+        <dd>Track Expenditure vs. Budget with the Monthly and Yearly Reports</dd>
+    </dl>
+
+{% endblock %}

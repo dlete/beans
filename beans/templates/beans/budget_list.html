@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load humanize %}
+
+        <div class="col-md-8">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th class="text-xs-right">Amount</th>
+                <th>Edit</th>
+                <th>Delete</th>
+                <th>View</th>
+              </tr>
+            </thead>
+
+			<tbody>
+
+			{% for b in budgets %}
+                <tr>
+                  <td>{{ b.category }}</td>
+                  <td class="text-xs-right">{{ b.amount|intcomma }}</td>
+                  <td><a href="{% url 'beans:budget_edit' pk=b.id %}">Edit</a></td>
+                  <td><a href="{% url 'beans:budget_delete' pk=b.id %}">Delete</a></td>
+                  <td><a href="{% url 'beans:budget_detail' pk=b.id %}">View</a></td>
+                </tr>
+			{% endfor %}
+
+			</tbody>
+		  </table>
+		</div>
+
+{% endblock content %}

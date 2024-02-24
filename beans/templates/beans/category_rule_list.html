@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+        <div class="col-md-8">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Keyword</th>
+                <th>Edit</th>
+                <th>Delete</th>
+                <th>View</th>
+              </tr>
+            </thead>
+
+			<tbody>
+
+            {% for cr in category_rules %}
+                <tr>
+                  <td>{{ cr.category}}</td>
+                  <td>{{ cr.keyword }}</td>
+                  <td><a href="{% url 'beans:category_rule_edit' pk=cr.id %}">Edit</a></td>
+                  <td><a href="{% url 'beans:category_rule_delete' pk=cr.id %}">Delete</a></td>
+                  <td><a href="{% url 'beans:category_rule_detail' pk=cr.id %}">Detail</a></td>
+                </tr>
+			{% endfor %}
+
+			</tbody>
+		  </table>
+		</div>
+
+{% endblock content %}

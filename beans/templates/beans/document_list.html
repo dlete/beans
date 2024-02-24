@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+{% comment %}
+http://stackoverflow.com/questions/17032174/having-trouble-with-user-is-authenticated-in-django-template
+{% endcomment %}
+
+{% comment %}
+{% if user.is_authenticated %}
+    {{ request.user.username }}
+{% endif %}
+{% endcomment %}
+
+{% comment %}
+{% for t in transactions %}
+    <ul>{{ t.date }}, {{ t.description }}, {{ t.amount}}, {{ t.category }}, {{ t.user }}</ul>
+{% endfor %}
+{% endcomment %}
+
+        <p><a href="{% url 'beans:document_new' %}">New Document</a></p>
+
+        <div class="col-md-8">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Description</th>
+                <th>Document</th>
+                <th>Uploaded at</th>
+                <th>Import</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+
+			<tbody>
+
+			{% for d in documents %}
+                <tr>
+                  <td>{{ d.description }}</td>
+                  <td>{{ d.document.name }}</a></td>
+                  <td>{{ d.uploaded_at }}</td>
+                  <td><a href="{% url 'beans:document_import' d.id %}">Import</a></td>
+                  <td><a href="{% url 'beans:document_delete' pk=d.id %}">Delete</a></td>
+                </tr>
+			{% endfor %}
+
+			</tbody>
+		  </table>
+		</div>
+
+
+{% endblock content %}

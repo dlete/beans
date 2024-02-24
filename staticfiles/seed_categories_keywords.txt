@@ -1,0 +1,37 @@
+category,keyword
+Car maintenance,Ballsbridge Garage
+Car maintenance,Topaz
+Christmas/Gifts,Avoca 
+Christmas/Gifts,Artnotts
+Christmas/Gifts,Debenhams
+Creche,Girafe
+Creche,Park Academy
+Creche,Little Harvard
+Doctor/Medicines,Beacon
+Doctor/Medicines,Deansgrangre Pharmacy
+Eating out,Bombay Pantry
+Eating out,Martello
+Electricity/Gas/Water,Energia
+Electricity/Gas/Water,BordGais
+Groceries,Aldi
+Groceries,Dunnes
+Groceries,Lidl 
+Groceries,SuperValu
+Housecare,Chadwicks
+Housecare,Woodies
+Insurance,AXA
+Insurance,Laya
+Pets,MaxiZoo
+Pets,Maxi Zoo
+Pets,BrayVets
+Phone/Internet,3Ireland
+Phone/Internet,3 Ireland
+Phone/Internet,Eir
+Phone/Internet,Eircom
+Phone/Internet,Sky
+Phone/Internet,UPC
+Phone/Internet,VirginMedia
+Phone/Internet,Virgin Media
+Phone/Internet,Vodafone
+Tax,TV License
+Vacations,Aer Lingus

@@ -1,0 +1,206 @@
+[
+{
+    "model": "beans.category",
+    "pk": 1,
+    "fields": {
+        "name": "Groceries"
+    }
+},
+{
+    "model": "beans.category",
+    "pk": 2,
+    "fields": {
+        "name": "Mortage"
+    }
+},
+{
+    "model": "beans.category",
+    "pk": 3,
+    "fields": {
+        "name": "Tax, car"
+    }
+},
+{
+    "model": "beans.category",
+    "pk": 4,
+    "fields": {
+        "name": "Tax, house"
+    }
+},
+{
+    "model": "beans.category",
+    "pk": 5,
+    "fields": {
+        "name": "Housecare"
+    }
+},
+{
+    "model": "beans.category",
+    "pk": 6,
+    "fields": {
+        "name": "Dining out"
+    }
+},
+{
+    "model": "beans.category",
+    "pk": 7,
+    "fields": {
+        "name": "Petrol"
+    }
+},
+{
+    "model": "beans.category",
+    "pk": 8,
+    "fields": {
+        "name": "Lessons"
+    }
+},
+{
+    "model": "beans.category",
+    "pk": 9,
+    "fields": {
+        "name": "Miscellaneous"
+    }
+},
+{
+    "model": "beans.category",
+    "pk": 10,
+    "fields": {
+        "name": "Car maintenance"
+    }
+},
+{
+    "model": "beans.category",
+    "pk": 11,
+    "fields": {
+        "name": "Doctor"
+    }
+},
+{
+    "model": "beans.category",
+    "pk": 12,
+    "fields": {
+        "name": "Medicine"
+    }
+},
+{
+    "model": "beans.category",
+    "pk": 13,
+    "fields": {
+        "name": "Gifts"
+    }
+},
+{
+    "model": "beans.category",
+    "pk": 14,
+    "fields": {
+        "name": "Christmas"
+    }
+},
+{
+    "model": "beans.category",
+    "pk": 15,
+    "fields": {
+        "name": "Saran Wood maintenance"
+    }
+},
+{
+    "model": "beans.category",
+    "pk": 16,
+    "fields": {
+        "name": "Insurance, house"
+    }
+},
+{
+    "model": "beans.category",
+    "pk": 17,
+    "fields": {
+        "name": "Insurance, car"
+    }
+},
+{
+    "model": "beans.category",
+    "pk": 18,
+    "fields": {
+        "name": "Tax, TV license"
+    }
+},
+{
+    "model": "beans.category",
+    "pk": 19,
+    "fields": {
+        "name": "Tax, Water"
+    }
+},
+{
+    "model": "beans.category",
+    "pk": 20,
+    "fields": {
+        "name": "Lanzarote, IBI+Basura"
+    }
+},
+{
+    "model": "beans.category",
+    "pk": 21,
+    "fields": {
+        "name": "Vacations"
+    }
+},
+{
+    "model": "beans.category",
+    "pk": 22,
+    "fields": {
+        "name": "Unexpected/Surprises"
+    }
+},
+{
+    "model": "beans.category",
+    "pk": 23,
+    "fields": {
+        "name": "Creche"
+    }
+},
+{
+    "model": "beans.category",
+    "pk": 24,
+    "fields": {
+        "name": "House, cleaning"
+    }
+},
+{
+    "model": "beans.vendor",
+    "pk": 1,
+    "fields": {
+        "name": "AIB",
+        "description": ""
+    }
+},
+{
+    "model": "beans.vendor",
+    "pk": 2,
+    "fields": {
+        "name": "Tesco",
+        "description": ""
+    }
+},
+{
+    "model": "beans.transaction",
+    "pk": 1,
+    "fields": {
+        "date": "2016-10-05",
+        "description": "De-humidifier",
+        "amount": "17.00",
+        "category": 5
+    }
+},
+{
+    "model": "beans.transaction",
+    "pk": 2,
+    "fields": {
+        "date": "2016-10-06",
+        "description": "TV license 1 Oct 2016 to 30 Sep 2017",
+        "amount": "160.00",
+        "category": 18
+    }
+}
+]
